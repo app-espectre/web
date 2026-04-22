@@ -2,13 +2,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "new-zen", sans-serif;
+    font-weight: 800;
+    font-style: bold;
 }
+:root {
+    --bg:          #F4F9FF;
+    --nav-bg:      #023059;
+    --primary:     #023059;
+    --accent:      #5D93C4;
+    --light-blue:  #D1EAFF;
+    --pale:        #EEF6FF;
+    --gray:        #6688AA;
+    --white:       #FFFFFF;
+    --shadow:      rgba(2, 48, 89, 0.12);
+}
+
 
 body {
     font-family: 'Zen', sans-serif;
     background-color: #D1EAFF;
     color: #023059;
     line-height: 1.6;
+    
 }
 
 /* Cabeza */
@@ -16,7 +32,7 @@ body {
     text-align: center;
     padding: 2rem 1rem;
     background-color: #D1EAFF;
-}
+}   
 
 .logo-img {
     max-width: 350px;
@@ -25,14 +41,14 @@ body {
     margin: 0 auto;
 }
 
-/* App Section */
-.app-section {
+
+.app {
     text-align: center;
     padding: 2rem 1rem;
     background-color: #D1EAFF;
 }
 
-.app-square {
+.icono-app {
     width: 150px;
     height: 150px;
     border-radius: 15px;
@@ -42,30 +58,33 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #D1EAFF;
 }
 
 .app-icon {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    background-color: #D1EAFF;
+
 }
 
-.app-title {
+.titulo-app {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 0.8rem;
     color: #023059;
 }
 
-.app-description {
+.descripcion-app {
     max-width: 600px;
     margin: 0 auto;
     font-size: 1rem;
     color: #023059;
 }
 
-/* Download Section */
-.download-section {
+
+.descarga{
     display: flex;
     justify-content: center;
     gap: 1.5rem;
@@ -73,7 +92,7 @@ body {
     background-color: #D1EAFF;
 }
 
-.download-btn {
+.boton{
     padding: 0.6rem 1.8rem;
     background-color: #023059;
     color: #D1EAFF;
@@ -86,21 +105,23 @@ body {
     cursor: pointer;
 }
 
-.download-btn:hover {
+.boton:hover {
     background-color: #011a33;
 }
 
-/* Videos Section */
-.videos-section {
-    display: flex;
-    gap: 1.5rem;
-    margin: 3rem auto;
+
+.video {
+    text-align: center;
+    width: 100%;
+    margin: 3rem 0;
     padding: 2rem 1rem;
-    background-color: #96C7F2;
+    background-color: #FFFFFF;
 }
 
-.video-box {
-    flex: 1;
+.video-gif {
+    width: 60%;
+    max-width: 500px;
+    margin: 0 auto;
     aspect-ratio: 16 / 9;
     border-radius: 15px;
     overflow: hidden;
@@ -110,53 +131,97 @@ body {
     justify-content: center;
 }
 
-.video-placeholder {
-    font-size: 1.2rem;
-    color: #023059;
-    font-weight: 500;
+.video-gif video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
-/* Content Section */
-.content-section {
+.video-gif img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.video-texto {
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.video-texto h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #023059;
+}
+
+.video-texto p {
+    color: #023059;
+    opacity: 0.95;
+    line-height: 1.8;
+}
+
+
+.informacion {
     display: flex;
     gap: 2rem;
     max-width: 900px;
     margin: 3rem auto;
     padding: 0 1rem;
     align-items: flex-start;
-    background-color: #D1EAFF;
+    background-color: #FFFFFF;
+    border-radius: 15px;
 }
+.informacion2 {
+    display: flex;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    align-items: flex-start;
 
-.content-image {
+}
+.imagen-informacion{
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .large-img {
-    width: 100%;
-    height: auto;
+    width: 215px;
+    height: 400px;
     border-radius: 15px;
     object-fit: cover;
-    max-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.content-text {
+.texto-informacion {
     flex: 1;
     padding: 1rem 0;
+    display: flex;          
+    flex-direction: column; 
+    align-items: center;   
 }
 
-.content-text h3 {
+.texto-informacion h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: #023059;
+    text-align: left;
+    
 }
 
-.content-text p {
+.texto-informacion p {
     color: #023059;
     opacity: 0.95;
     line-height: 1.8;
+    text-align: left;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 2rem 1rem;
@@ -165,12 +230,156 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive */
+.creadoras {
+    text-align: center;
+    width: 100%;
+    margin: 3rem 0;
+    padding: 3rem 1rem;
+    background-color: #FFFFFF;
+}
+
+.team-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #023059;
+}
+
+.equipo {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.member {
+    text-align: center;
+    transition: transform 0.3s ease; 
+    cursor: pointer;
+}
+.member:hover {
+    transform: scale(1.1) translateY(-10px);
+}
+
+.member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    transition: box-shadow 0.3s ease;
+}
+.member:hover img {
+    box-shadow: 0 10px 20px rgba(2, 48, 89, 0.2);
+}
+
+.member p {
+    font-size: 1rem;
+    color: #023059;
+}
+
+
+.trailer {
+    width: 100%;
+    margin: 3rem 0;
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: #D1EAFF;
+}
+
+.trailer h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #023059;
+}
+
+.video-trailer {
+    display: flex;
+    justify-content: center;
+}
+
+.video-trailer video {
+    max-width: 45%;
+    height: auto;
+    border-radius: 15px;
+}
+.barra-navegacion {
+    background-color: var(--nav-bg);
+    padding: 0.7rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Esta es la "caja blanca" para el logo */
+.nav-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--white);
+    padding: 6px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-icono-app {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.nav-logo-texto {
+    height: 22px;
+    width: auto;
+}
+
+.enlaces-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.enlaces-nav a {
+    color: #D1EAFF;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.enlaces-nav a:hover,
+.enlaces-nav a.activo {
+    color: var(--white);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 2px;
+}
+
+/* Ajuste para que el scroll no tape el título al saltar */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; 
+}
+
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-left.visible { opacity: 1; transform: translateX(0); }
+.fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-right.visible { opacity: 1; transform: translateX(0); }
+
 @media (max-width: 768px) {
-    .download-section,
-    .videos-section,
-    .content-section {
-        flex-direction: column;
+    .equipo {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: nowrap;
     }
 
     .logo-img {
@@ -179,5 +388,83 @@ footer {
 
     .app-title {
         font-size: 1.5rem;
+    }
+    .nav-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .enlaces-nav {
+        gap: 1rem;
+    }
+    .enlaces-nav a {
+        font-size: 0.85rem;
+}
+}
+
+@media (max-width: 375px) {
+    .descarga,
+    .video,
+    .informacion,
+    .informacion2,
+    .creadoras,
+    .trailer {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .informacion,
+    .informacion2 {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+ .informacion{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .imagen-informacion{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .equipo {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .equipo .member {
+        flex: 0 1 calc(33.33% - 1rem);
+        max-width: calc(33.33% - 1rem);
+    }
+
+    .video-gif {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .large-img {
+        width: 180px;
+        height: 330px;
+    }
+
+    .member img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .enlaces-nav {
+        gap: 1.5rem;
+    }
+    .enlaces-nav a {
+        font-size: 0.85rem;
+    }
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-logo-section {
+        padding: 5px 12px;
     }
 }

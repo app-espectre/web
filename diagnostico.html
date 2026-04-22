@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaluació Espectre</title>
+    <link rel="stylesheet" href="diagnostico.css">
+</head>
+
+<nav class="barra-navegacion">
+    <div class="nav-container">
+        <div class="nav-logo-section">
+            <img src="img/0416-_1__1_.gif" alt="Icono App" class="nav-icono-app">
+            <img src="img/1x/logo.png" alt="Logo Espectre" class="nav-logo-texto">
+        </div>
+
+        <div class="enlaces-nav">
+            <a href="index.html#creadoras">¿Quiénes somos?</a>
+            <a href="index.html#profesionales">Nuestros profesionales</a>
+            <a href="diagnostico.html">Diagnóstico</a>
+            <a href="index.html#descarga">Descarga</a>
+        </div>
+    </div>
+</nav>
+
+<body class="body-diagnostico"> 
+
+    <main class="contenedor-test">
+        <header class="header-test">
+            <h1>Avalua la comunicació</h1>
+            <p id="contador-pregunta">Pregunta 1 de 12</p>
+            <div class="barra-progres">
+                <div class="progres-actiu" id="progres" style="width:0%;"></div>
+            </div>
+        </header>
+
+        <section id="test-container">
+            <div class="card-pregunta">
+                <h2 id="text-pregunta">Pot tranquil·litzar-se amb ajuda després d'un moment de frustració o nervis?</h2>
+                <p class="subtext">Basant-te en el comportament dels últims 30 dies.</p>
+            </div>
+
+            <div class="opciones">
+                <button class="opcion" onclick="seleccionarOpcion(this)">
+                    <div class="opcion-content">
+                        <strong>Sí, de forma consistent</strong>
+                        <p>Ho fa habitualment, sense necessitat de suport</p>
+                    </div>
+                </button>
+                <button class="opcion" onclick="seleccionarOpcion(this)">
+                    <div class="opcion-content">
+                        <strong>A vegades</strong>
+                        <p>Ho fa en alguns contextos però no sempre</p>
+                    </div>
+                </button>
+                <button class="opcion" onclick="seleccionarOpcion(this)">
+                    <div class="opcion-content">
+                        <strong>Rarament o mai</strong>
+                        <p>Necessita molt suport o no ho fa de forma verbal</p>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+         <footer class="footer-test">
+            <button class="btn-secundari" onclick="anteriorPregunta()">Anterior</button>
+            <button class="btn-primari" onclick="seguentPregunta()">Següent</button>
+        </footer>
+    </main>
+
+   <script>
+    var preguntes = [
+        "Utilitza paraules soles per comunicar-se?",
+        "Estén instruccions senzilles com 'vine', 'donam això' o 'seu'?",
+        "Mostra interès per interactuar amb altres persones?",
+        "Respón quan li diuen el seu nom o quan li parlen directament?",
+        "Pot fer activitats quotidianes amb certa autonomia?",
+        "Intenta fer coses per si mateix sense demanar ajuda constantment?",
+        "Té coordinació en activitats com córrer, saltar o pujar escales?",
+        "Pot manipular objectes petits amb les mans?",
+        "Expressa les seves emocions d'una manera que es pot entendre?",
+        "Pot tranquil·litzar-se amb ajuda després d'un moment de frustració o nervis?",
+        "Accepta petits canvis en la rutina sense grans dificultats?",
+        "Pot mantenir l'atenció en una activitat o joc durant uns minuts?"
+    ];
+
+    var indexActual = 0;
+
+    function actualitzarPantalla() {
+        // Cambiar el texto de la pregunta
+        document.getElementById('text-pregunta').innerText = preguntes[indexActual];
+        
+        // Cambiar el contador (ej: Pregunta 1 de 12)
+        // Usamos "+" para unir textos en lugar de símbolos $
+        var numeroPregunta = indexActual + 1;
+        document.getElementById('contador-pregunta').innerText = "Pregunta " + numeroPregunta + " de " + preguntes.length;
+        
+        // Actualizar la barra de progreso
+        var percentatge = (numeroPregunta / preguntes.length) * 100;
+        document.getElementById('progres').style.width = percentatge + "%";
+        
+        // Limpiar selecciones previas
+        var opcions = document.querySelectorAll('.opcion');
+        for (var i = 0; i < opcions.length; i++) {
+            opcions[i].classList.remove('seleccionada');
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function seleccionarOpcion(element) {
+        var opcions = document.querySelectorAll('.opcion');
+        for (var i = 0; i < opcions.length; i++) {
+            opcions[i].classList.remove('seleccionada');
+        }
+        element.classList.add('seleccionada');
+    }
+
+    function seguentPregunta() {
+        var haySeleccion = document.querySelector('.opcion.seleccionada');
+        
+        if (!haySeleccion) {
+            alert("Per favor, selecciona una resposta abans de continuar.");
+            return;
+        }
+
+        if (indexActual < preguntes.length - 1) {
+            indexActual++;
+            actualitzarPantalla();
+        } else {
+            alert("Has completat l'avaluació amb èxit.");
+            window.location.href = "index.html"; 
+        }
+    }
+
+    function anteriorPregunta() {
+        if (indexActual > 0) {
+            indexActual--;
+            actualitzarPantalla();
+        }
+    }
+</script>
+</body>
+</html>

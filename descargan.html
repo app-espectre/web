@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descarrega Espectre</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="descarga.css">
+</head>
+<body class="body-descarga">
+
+    <nav class="barra-navegacion">
+        <div class="nav-container">
+            <div class="nav-logo-section">
+                <img src="img/0416-_1__1_.gif" alt="Icono App" class="nav-icono-app">
+                <img src="img/1x/logo.png" alt="Logo Espectre" class="nav-logo-texto">
+            </div>
+            <div class="enlaces-nav">
+                <a href="index.html">Inicio</a>
+                <a href="profesionales.html">Nuestros profesionales</a>
+                <a href="diagnostico.html">Diagnóstico</a>
+                <a href="descarga.html">Descarga</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="descarga-hero">
+        <div class="hero-content">
+            <div class="hero-text fade-left">
+                <span class="badge">Ja disponible</span>
+                <h1>L'ajuda que necessites, <br><span>al teu fons de pantalla.</span></h1>
+                <p>Espectre t'acompanya en cada pas. Gestiona rutines, segueix el progrés i comunica't amb professionals des d'una sola plataforma.</p>
+                
+                <div class="botones-grupo">
+                    <a href="#" class="btn-store apple">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="">
+                        <span>App Store</span>
+                    </a>
+                    <a href="#" class="btn-store google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Google_Play_Store_badge_EN.svg" alt="">
+                        <span>Google Play</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-mascota fade-right">
+                <img src="img/download.gif" alt="Mascota Espectre" class="mascota-animada">
+                <div class="blob-bg"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="descarga-mockup fade-in">
+        <div class="container">
+            <div class="mockup-wrapper">
+                <img src="img/1x/videodescarga.gif" alt="Mockup Espectre Web" class="img-mockup">
+            </div>
+            <div class="explicacion-web">
+                <h2>També al teu ordinador</h2>
+                <p>No només som una App. Accedeix al panel de control complet des del teu navegador per veure gràfiques detallades i informes professionals.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animacions al fer scroll
+        const observerOptions = { threshold: 0.2 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-left, .fade-right, .fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
