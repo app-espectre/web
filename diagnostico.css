@@ -26,7 +26,13 @@ body.body-diagnostico {
     display: flex;
     flex-direction: column;
 }
-
+footer {
+    text-align: center;
+    padding: 1rem 1rem;
+    background-color: #D1EAFF;
+    color: rgba(2, 48, 89, 0.6);
+    font-size: 0.9rem;
+}
 
 
 .contenedor-test {
