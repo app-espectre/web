@@ -360,7 +360,35 @@ footer {
     border-bottom: 2px solid var(--accent);
     padding-bottom: 2px;
 }
+.boton-imagen-descarga .img-descarga {
+    width: 140px;
+    height: auto;
+    transition: filter 0.2s;
+}
+.boton-imagen-descarga:hover .img-descarga {
+    content: url('img/descargaHover.png'); /* Cambia la imagen al hacer hover */
+    filter: brightness(1.1) drop-shadow(0 2px 8px #5D93C4);
+}
+.boton-link {
 
+    background-color: #023059;
+    color: #D1EAFF;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 140px;
+}
+.boton-link:hover {
+    background-color: #011a33;
+}
 /* Ajuste para que el scroll no tape el título al saltar */
 html {
     scroll-behavior: smooth;
