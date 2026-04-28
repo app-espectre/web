@@ -200,13 +200,6 @@ body {
     justify-content: center;
 }
 
-.texto-informacion > img.large-img {
-    width: 100%;
-    max-width: 360px;
-    height: auto;
-    object-fit: contain;
-}
-
 .texto-informacion {
     flex: 1;
     padding: 1rem 0;
