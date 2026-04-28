@@ -191,8 +191,8 @@ body {
 }
 
 .large-img {
-    width: 215px;
-    height: 400px;
+    width: 194px;
+    height: 360px;
     border-radius: 15px;
     object-fit: cover;
     display: flex;
@@ -347,7 +347,7 @@ footer {
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 1rem;
+    padding: 0.4rem;
     border: 1px solid #6688AA;
     border-radius: 12px;
     font-family: inherit;
@@ -601,8 +601,8 @@ html {
     }
 
     .large-img {
-        width: 180px;
-        height: 330px;
+        width: 162px;
+        height: 297px;
     }
 
     .member img {
