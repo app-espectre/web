@@ -536,98 +536,120 @@ html {
 .fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-right.visible { opacity: 1; transform: translateX(0); }
 
+/* ==========================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================== */
+
+
+
+/* ==========================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================== */
+
+/* Tabletas (Pantallas menores a 992px) */
+@media (max-width: 992px) {
+    .informacion, .informacion2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .informacion2 {
+        flex-direction: column-reverse;
+    }
+
+    .texto-informacion h3, .texto-informacion p {
+        text-align: center;
+    }
+}
+
+/* Móviles (Pantallas menores a 768px) */
 @media (max-width: 768px) {
-    .equipo {
-        flex-direction: row;
-        justify-content: center;
-        gap: 1rem;
-        flex-wrap: nowrap;
-    }
-
-    .logo-img {
-        max-width: 250px;
-    }
-
-    .app-title {
-        font-size: 1.5rem;
-    }
+    /* Navegación más compacta */
     .nav-container {
         flex-direction: column;
-        gap: 0.5rem;
+        padding: 0.5rem;
     }
-    .enlaces-nav {
-        gap: 1rem;
-    }
-    .enlaces-nav a {
-        font-size: 0.85rem;
-}
-}
 
-@media (max-width: 375px) {
-    .descarga,
-    .video,
-    .informacion,
-    .informacion2,
-    .creadoras,
-    .trailer,
+    .enlaces-nav {
+        gap: 0.8rem;
+        margin-top: 0.5rem;
+    }
+
+    /* Reducción de tamaños generales */
+    .logo-img { max-width: 220px; }
+    .video-gif { width: 100%; }
+    .video-trailer video { max-width: 95%; }
+
+    /* SECCIÓN CONTACTO Y FORMULARIO (Más pequeños) */
     .contacto {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
+        margin: 1rem auto;
+        padding: 1.2rem;
+        max-width: 90%; /* Se ajusta al ancho de la pantalla */
     }
 
-    .informacion,
-    .informacion2 {
-        flex-direction: column;
-        align-items: center;
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
+    .contacto h3 {
+        font-size: 1.4rem; /* Título más pequeño */
+        margin-bottom: 1rem;
     }
- .informacion{
+
+    .form-group input, .form-group textarea {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .contacto .boton {
+        width: 100%; /* Botón de enviar a ancho completo */
+        padding: 0.8rem;
+    }
+
+    /* REDES SOCIALES (Ajustadas) */
+    .contacto-social h3 {
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-buttons {
         display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-    .imagen-informacion{
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-    .equipo {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .equipo .member {
-        flex: 0 1 calc(33.33% - 1rem);
-        max-width: calc(33.33% - 1rem);
-    }
-
-    .video-gif {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .large-img {
-        width: 162px;
-        height: 297px;
-    }
-
-    .member img {
-        width: 90px;
-        height: 90px;
-    }
-
-    .enlaces-nav {
-        gap: 1.5rem;
-    }
-    .enlaces-nav a {
-        font-size: 0.85rem;
-    }
-      .nav-container {
         flex-direction: column;
-        gap: 15px;
+        gap: 0.6rem;
+        width: 100%;
+    }
+
+    .social-column {
+        width: 100%;
+        gap: 0.6rem;
+    }
+
+    .social-btn {
+        min-width: 0 !important; /* Eliminamos el ancho mínimo de 280px */
+        width: 100%;            /* Se ajusta al contenedor */
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+        justify-content: center; /* Centra el contenido del botón */
+    }
+
+    .social-icon {
+        width: 24px; /* Iconos un poco más pequeños */
+        height: 24px;
+    }
+
+    /* Botones de descarga */
+    .descarga {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+}
+
+/* Ajuste para móviles muy pequeños (iPhone SE, etc.) */
+@media (max-width: 380px) {
+    .enlaces-nav a {
+        font-size: 0.75rem;
     }
     
-    .nav-logo-section {
-        padding: 5px 12px;
+    .large-img {
+        width: 130px;
     }
 }
