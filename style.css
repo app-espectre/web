@@ -391,9 +391,15 @@ footer {
 
 .social-buttons {
     display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.social-column {
+    display: flex;
     flex-direction: column;
     gap: 1rem;
-    align-items: center;
 }
 
 .social-btn {
